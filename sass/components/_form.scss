@@ -1,0 +1,101 @@
+.form {
+     
+    &__input {
+        font-size: 1.5rem;
+        padding: 1.5rem 2rem;
+        background-color: rgba($white, $alpha: 0.5);
+        border: none;
+        width: 100%;
+        border-radius: 0.2rem;
+        color: $grey-dark-3;
+        opacity: 1;
+        margin-bottom: 0.7rem;
+        border-bottom: 0.5rem solid transparent;
+
+        &::-webkit-input-placeholder {
+            color: $grey-dark-3;
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba($color: #000000, $alpha: 0.1);
+            border-bottom: 0.5rem solid $primary-dark;
+        }
+
+        &:invalid {
+            border-bottom: 0.5rem solid $secondary-1-dark;
+        }
+    }
+
+    &__input:placeholder-shown + &__label {
+            opacity: 0;
+            transform: translateY(-4rem);
+        }
+
+    &__label {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-left: 2rem;
+        color: white;
+        display: block;
+        transition: all 0.3s;
+    }
+
+    &__group {
+        margin-bottom: 2rem;
+    }
+
+    &__radio-group {
+        display: inline-block;
+        width: 30%;
+    }
+
+    &__radio-label {
+        font-size: 1.9rem;
+        color: white;
+        cursor: pointer;
+        padding-left: 5rem;
+        position: relative;
+        display: inline-block;
+    }
+
+    &__radio-button {
+        height: 3rem;
+        width: 3rem;
+        border-radius: 50%;
+        background-image: url(/resources/css/img/golf-ball-texture-small.jpg);
+        position: absolute;
+        display: inline-block;
+        top: -1.6rem;
+        left: -0.8rem;
+
+        &::after {
+            content: "";
+            display: block;
+            height: 1.3rem;
+            width: 1.3rem;
+            border-radius: 50%;
+            background-color: $primary-light;
+            position: absolute;
+            top: 50%;
+            @include center-object;
+            opacity: 0;
+            transition: opacity 0.13;
+        }
+    }
+
+    &__radio-input:checked + &__radio-label &__radio-button::after {
+        opacity: 1;
+    }
+
+    &__textarea {
+        font-size: 1.5rem;
+        width: 100%;
+        border-radius: 0.2rem;
+        background-color: rgba(white, 0.5);
+        font-family: inherit;
+        color: $grey-dark-3;
+        outline: none;
+        margin-top: 1.5rem;
+    }
+}

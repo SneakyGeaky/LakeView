@@ -1,0 +1,136 @@
+.plan {
+    height: 50rem;
+    position: relative;
+
+    &__side {
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        transition: all 1.2s;
+        perspective: 150rem;
+        backface-visibility: hidden;
+        box-shadow: 0 1.5rem 4rem rgba($black, 0.15);   
+        overflow: hidden;
+
+        &--front {
+            background-color: $white;
+            border-radius: 3rem 0 3rem 0;
+        }
+
+        &--back {
+            transform: rotateY(180deg);
+            border-radius: 0 3rem 0 3rem;
+
+            &--1 {
+                background-image: linear-gradient(to right bottom, $secondary-1, $secondary-1-dark);
+            }
+
+            &--2 {
+                background-image: linear-gradient(to right bottom, $secondary-2, $secondary-2-dark);
+            }
+
+            &--3 {
+                background-image: linear-gradient(to right bottom, $secondary-3, $secondary-3-dark);
+            }
+
+            &__heading {
+                color: white;
+                font-weight: 100;
+                font-size: 3rem;
+                margin-top: 25%;
+                text-align: center;
+            }
+
+            &__sub-heading {
+                font-weight: 50;
+                text-align: center;
+                font-size: 1.3rem;
+                color: white;
+            }
+
+            &__button {
+                margin-top: 50%;
+                left: 25%;
+            }
+        }
+    }
+    
+
+    &:hover &__side--front {
+        transform: rotateY(-180deg);
+    }
+
+    &:hover &__side--back {
+        transform: rotateY(0deg);
+    }
+
+    &__image {
+
+        height: 18rem;
+        background-size: cover;
+        background-blend-mode: overlay;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 83%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 83%, 0 100%);
+
+        &--1 {
+            background-image: linear-gradient(to right bottom, $secondary-1, $secondary-1-dark), url(/resources/css/img/plan-img-1.jpg);
+        }
+
+        &--2 {
+            background-image: linear-gradient(to right bottom, $secondary-1, $secondary-1-dark), url(/resources/css/img/plan-img-2.jpg);
+        }
+
+        &--3 {
+            background-image: linear-gradient(to right bottom, $secondary-1, $secondary-1-dark), url(/resources/css/img/plan-img-3.jpg);
+        }
+    }
+
+    &__heading {
+        color: $white;
+        width: 48%;
+        font-weight: 400;
+        font-size: 2.8rem;
+        text-transform: uppercase;
+        position: absolute;
+        top: 10.3rem;
+        right: 2rem;
+        text-align: right;
+        padding: 1rem 1.5rem;
+
+        &--1 {
+            background-image: linear-gradient(to right bottom, rgba($secondary-1, 0.7), rgba($secondary-1-dark, 0.7));
+        }
+
+        &--2 {
+            background-image: linear-gradient(to right bottom, rgba($secondary-2, 0.7), rgba($secondary-2-dark, 0.7));
+        }
+
+        &--3 {
+            background-image: linear-gradient(to right bottom, rgba($secondary-3, 0.7), rgba($secondary-3-dark, 0.7));
+        }
+    }
+
+    &__bullets {
+
+        padding: 3rem;
+         
+        ul {
+            color: $grey-dark;
+            list-style: none;
+            width: 90%;
+            text-align: center;
+            margin: -1rem auto;
+            font-size: 1.8rem;
+
+            li {
+                padding: 2rem;
+                &:not(:last-child) {
+                    border-bottom: 1px solid $grey-light-2;
+                }
+            }
+        }
+    }
+}
